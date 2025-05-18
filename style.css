@@ -1,47 +1,140 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #f4f4f4;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  .calculator {
-    background: #fff;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
-  }
-  
-  #display {
-    width: 100%;
-    padding: 20px;
-    font-size: 24px;
-    text-align: right;
-    border: none;
-    background: #eee;
-    margin-bottom: 10px;
-    border-radius: 8px;
-  }
-  
-  .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 60px);
-    gap: 10px;
-  }
-  
-  button {
-    padding: 20px;
-    font-size: 18px;
-    border: none;
-    background: #333;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background: #444;
-  }
-  
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2980b9;
+  --accent-color: #e74c3c;
+  --dark-color: #2c3e50;
+  --light-color: #ecf0f1;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator-container {
+  width: 100%;
+  max-width: 320px;
+  padding: 20px;
+}
+
+.calculator-title {
+  color: var(--dark-color);
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.calculator {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  padding: 20px;
+}
+
+.calculator-display {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.calculator-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.5rem;
+  text-align: right;
+  border: 2px solid #ddd;
+  border-radius: var(--border-radius);
+  background-color: #f9f9f9;
+  margin-bottom: 5px;
+}
+
+.memory-indicator {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.button {
+  width: 60px;
+  height: 60px;
+  font-size: 1.2rem;
+  margin: 5px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.button-number {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.button-number:hover {
+  background-color: #d5dbdb;
+}
+
+.button-operator {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button-operator:hover {
+  background-color: var(--secondary-color);
+}
+
+.button-function {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.button-function:hover {
+  background-color: #7f8c8d;
+}
+
+.button-equals {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.button-equals:hover {
+  background-color: #c0392b;
+}
+
+.button-memory {
+  background-color: #9b59b6;
+  color: white;
+}
+
+.button-memory:hover {
+  background-color: #8e44ad;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
