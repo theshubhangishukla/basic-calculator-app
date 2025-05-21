@@ -18,7 +18,7 @@ Array.from(buttons).forEach((button) => {
     
     if (buttonText === '=') {
       try {
-        // Replace % with /100 for calculation
+        
         string = string.replace(/%/g, '/100');
         string = eval(string).toString();
         input.value = string;
@@ -37,7 +37,7 @@ Array.from(buttons).forEach((button) => {
         memory += currentValue;
         updateMemoryIndicator();
       } catch {
-        // Do nothing if there's an error
+        
       }
     }
     else if (buttonText === 'M-') {
@@ -46,11 +46,11 @@ Array.from(buttons).forEach((button) => {
         memory -= currentValue;
         updateMemoryIndicator();
       } catch {
-        // Do nothing if there's an error
+        
       }
     }
     else if (buttonText === '%') {
-      // Add % to the string but don't calculate yet
+      
       string += buttonText;
       input.value = string;
     }
